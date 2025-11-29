@@ -79,7 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // Auto-open sidebar on mobile
             if (window.innerWidth <= 768) {
                 const sidebar = document.getElementById("sidebar");
+                const overlay = document.getElementById("mobileOverlay");
+                
                 if (sidebar) sidebar.classList.add("active");
+                if (overlay) overlay.classList.add("active");
             }
         }
     }
@@ -204,7 +207,10 @@ function openFile(element, link) {
 /* --- SYSTEM UTILS --- */
 function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("mobileOverlay");
+
     if (sidebar) sidebar.classList.toggle("active");
+    if (overlay) overlay.classList.toggle("active");
 }
 
 function login() {
@@ -294,3 +300,4 @@ function expandParents(element) {
 function restoreMenu() {
     buildMenu(); // Re-render the menu to clear search state
 }
+
