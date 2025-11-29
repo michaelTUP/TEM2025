@@ -9,12 +9,14 @@ body {
 /* LOGIN */
 #loginPage {
     height: 100vh;
-    background: #1f3b63;
-    display: flex;
+    background: linear-gradient(135deg, #7b1e3d, #1f3b63);
+    /* display: flex;  <-- DELETE or COMMENT THIS OUT */
+    display: none;    /* <-- ADD THIS: Hidden by default */
     justify-content: center;
     align-items: center;
     color: white;
 }
+
 #loginBox {
     width: 320px;
     padding: 25px;
@@ -34,18 +36,20 @@ body {
 
 /* SYSTEM */
 #systemPage {
-    display: none;
     height: 100vh;
-    display: flex;
+    /* display: flex;  <-- DELETE or COMMENT THIS OUT */
+    display: none;    /* <-- ADD THIS: Hidden by default */
+    width: 100%;
 }
 
 /* SIDEBAR */
 #sidebar {
-    width: 300px;
-    background: #2b4c7e;
+    width: 350px;
+    background: linear-gradient(to bottom, #7b1e3d, #1f3b63);
     color: white;
-    padding: 18px;
+    padding: 10px;
     overflow-y: auto;
+    z-index: 1000;
 }
 #sidebar img {
     display: block;
@@ -55,7 +59,7 @@ body {
 
 #menuContainer ul {
     list-style: none;
-    padding-left: 15px;
+    padding-left: 7px;
 }
 
 /* MENU STYLES */
@@ -67,10 +71,10 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
-.folder { background: #4567a8; }
+.folder { background: #34699A; }
 
 .file {
-    background: #5879b8;
+    background: #468A9A;
     padding: 8px;
     margin: 4px 0;
     border-radius: 5px;
@@ -84,19 +88,61 @@ body {
 
 /* HIGHLIGHT */
 .active-menu {
-    background: #6ea0ff !important;
+    background: #BF092F !important;
     color: black !important;
     border-left: 5px solid white;
 }
 
 /* MAIN CONTENT */
-#content { flex: 1; background: #f5f5f5; }
+#content { 
+    flex: 1; 
+    background: #f5f5f5; 
+    display: flex;          /* Changed to Flex */
+    flex-direction: column; /* Stack items Top-to-Bottom */
+    height: 100vh;
+    overflow: hidden;
+}
+#fileTitleHeader {
+    background: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f3b63;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-shrink: 0;        /* Prevents header from shrinking */
+    z-index: 10;
+}
+
+#iframeContainer {
+    flex: 1;               /* Takes all remaining height */
+    position: relative;    /* Blockers position themselves relative to THIS */
+    width: 100%;
+    overflow: hidden;
+}
 iframe { width: 100%; height: 100%; border: none; }
 
 /* MOBILE */
 #toggleSidebarBtn {
     display: none;
+    z-index: 2000 !important;
 }
+
+#popoutBlocker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 100;
+}
+
+/* MOBILE */
+#toggleSidebarBtn {
+    display: none;
+    z-index: 2000 !important;
+}
+
 @media (max-width: 768px) {
     #toggleSidebarBtn {
         display: block;
@@ -109,17 +155,28 @@ iframe { width: 100%; height: 100%; border: none; }
         border: none;
         border-radius: 6px;
     }
+
     #sidebar {
-        position: absolute;
+        position: fixed;       /* REQUIRED: detached from flex container */
+        top: 0;
+        left: 0;
+        bottom: 0;             /* REQUIRED: forces it to touch the bottom */
+        height: 100vh;         /* Full viewport height */
         width: 80%;
         transform: translateX(-100%);
         transition: 0.3s;
         z-index: 1000;
+        overflow-y: auto;      
+        padding: 15px;
+        box-sizing: border-box; /* PREVENTS layout breaking due to padding */
     }
+
     #sidebar.active {
         transform: translateX(0);
+        box-shadow: 5px 0 15px rgba(0,0,0,0.5);
     }
 }
+
 .tupcielogo {
       display: flex;              /* places items side by side */
       justify-content: center;    /* centers them horizontally */
@@ -129,3 +186,116 @@ iframe { width: 100%; height: 100%; border: none; }
 .tupcielogo img {
       margin: 0 10px;             /* adds space between images */
     }
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(90deg);
+}
+#searchBox {
+    width: 93%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.highlight {
+    color: maroon !important;
+    font-weight: bold;
+}
+
+#sidebar .logo-row {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#sidebar .logo-row img {
+    display: inline-block !important; 
+    width: 70px !important;
+    height: 70px !important;
+    margin: 0 !important; 
+    object-fit: contain;
+}
+
+.sidebar-header {
+    display: flex;          /* Puts Logos and Text side-by-side */
+    align-items: center;    /* Aligns them vertically in the middle */
+    gap: 10px;              /* Space between logos and text */
+    margin-bottom: 20px;    /* Space below the whole header */
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* Optional divider line */
+}
+
+/* LEFT: Logos Container */
+.header-logos {
+    display: flex;
+    flex-direction: column; /* Stacks logos top/bottom to save width? */
+    /* OR use 'row' if you want them side-by-side, but they must be very small */
+    flex-direction: row; 
+    gap: 5px;
+}
+
+/* Resize images to fit next to text */
+.header-logos img {
+    width: 35px !important;  /* Much smaller to fit */
+    height: 35px !important;
+    object-fit: contain;
+    display: block;
+}
+
+/* RIGHT: Text Container */
+.header-text {
+    display: flex;
+    flex-direction: column; /* Title on top, Date on bottom */
+    justify-content: center;
+}
+
+.app-title {
+    font-size: 13px;        /* Smaller font to fit */
+    font-weight: bold;
+    line-height: 1.2;
+    color: white;
+}
+
+.app-date {
+    font-size: 11px;
+    color: #cbd5e1;         /* Slightly lighter color for the date */
+    margin-top: 2px;
+}
+
+#menuContainer > ul > li > .folder,
+#menuContainer > ul > li > .area-title {
+    background: #F5AD18
+    ; /* Change this to your preferred color (e.g., #2c3e50) */
+    color: white;        /* Text color */
+}
+
+.area-title {
+    background: #154D71 !important; /* Example: SeaGreen. Change to your preferred color */
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* BLOCKER FOR BOTTOM-RIGHT (Google Slides Button) */
+#bottomBlocker {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    height: 60px;
+    z-index: 100;
+}
+

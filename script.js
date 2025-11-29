@@ -1,157 +1,296 @@
-/* LOGIN ACCOUNTS */
+/* ============================
+   1. DATA & CONFIG
+   ============================ */
 const accounts = [
-    { username: "admin", password: "12345" },
-    { username: "teacher", password: "pass123" },
-    { username: "student", password: "student1" }
+    { username: "kokai", password: "123" },
+    { username: "tem", password: "2025" }
 ];
 
-/* ------------------------------------------
-   LESSON DATA (USE THIS TO ADD ALL FILES)
--------------------------------------------*/
-
-const modules = [
+const areaContent = [
     {
-        
-        title: "Module 1 – Introduction",
-        id: "m1",
-        groups: [
-            {
-                
-                title: "Lesson Group A",
-                id: "m1a",
-                lessons: [
-                    {
-                        title: "Lesson 1 – Overview (PDF)",
-                        type: "pdf",
-                        link: "https://drive.google.com/file/d/1Osh8K9S9tQ9jLMhTyTDwAGbpxLJNc1R2/preview"
-                    },
-                    {
-                        title: "Lesson 2 – Video Intro (Google Drive)",
-                        type: "video",
-                        link: "https://drive.google.com/file/d/1oM5-TrrAYdusd6bBpoCQQekcchJ2nEfK/preview"
-                    }                   
-                ]
-            },
-            {
-                title: "Lesson Group B",
-                id: "m1b",
-                lessons: [
-                    {
-                        title: "Activity 1 – Worksheet",
-                        type: "pdf",
-                        link: "https://drive.google.com/file/d/1FnBNnr_krvu9bl4v3698eWVsh2H_F-cC/preview"
-                    },
-                    {
-                        title: "Activity 2 – Reference",
-                        type: "pdf",
-                        link: "https://drive.google.com/file/d/1GkboaVINDtL4VvXeIY3g7L92fiJUmZh5/preview"
-                    }
-                ]
-            }
-        ],
-        
-        
+        title: "601 - Dr. Portez",
+        type: "folder",
+        children: [
+            {title: "Historical Roots of Technology Education", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Philosophical Underpinnings of Technology Education", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Core Principles of Advanced Technology Education", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Theoretical Models in Technology Education", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Best Practices and Pedagogical Innovations", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "National Legal Frameworks in Technology Education", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Contemporary Challenges and Problems in Technology Education", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Emerging Trends and Innovations", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Future Prospects and Policy Directions", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Comparative Studies in Technology Education", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Globalization and International Collaboration", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Current Tools and Applications in Technology Education", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+            {title: "Impact of Educational Technology on Advanced Teaching and Learning", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
+        ]
+    },
+    {
+        title: "604 - Dr. Cruz",
+        type: "folder",
+        children: [
+            {title: "Introduction to Leadership Theories in Technology Education (part 1)", type: "file", link: ""},                            
+            {title: "Introduction to Leadership Theories in Technology Education (part 2)", type: "file", link: ""},                            
+            {title: "Leadership for Innovation and Change", type: "file", link: ""},
+            {title: "Policy Development in Technology Education	(part 1)", type: "file", link: ""},
+            {title: "Policy Development in Technology Education	(part 2)", type: "file", link: ""},
+            {title: "Legal Issues", type: "file", link: ""},
+            {title: "Ethical Issues", type: "file", link: ""},
+            {title: "Governance Models in Technology Education (part 1)", type: "file", link: ""},
+            {title: "Governance Models in Technology Education (part 2)", type: "file", link: ""},
+            {title: "Accountability and Performance Management (part 1)", type: "file", link: ""},
+            {title: "Accountability and Performance Management (part 2)", type: "file", link: ""},
+            {title: "Accountability and Performance Management (part 3)", type: "file", link: ""},
+            {title: "Strategic Leadership Defined, Essentials, SL Frameworks", type: "file", link: ""},
+            {title: "Resource Management Nature, Scope, Elements, Types	", type: "file", link: ""},                          
+        ]
+    },
+    {
+        title: "609 - Dr. De Asis",
+        type: "folder",
+        children: [
+            {title: "", type: "file", link: ""},                            
+                          
+        ]
     },
 
-    {
-        title: "Module 2 – ICT Fundamentals",
-        id: "m2",
-        groups: [
-            {
-                title: "Lessons",
-                id: "m2a",
-                lessons: [
-                    {
-                        title: "Lesson 1 – ICT Concepts (PDF)",
-                        type: "pdf",
-                        link: "https://drive.google.com/file/d/1QqXekV_Dv2Q3WnQi7VM43o-mA0jA-wtE/preview"
-                    }
-                ]
-            }
-        ]
-    }
 ];
 
-/* ------------------------------------------
-   BUILD MENU DYNAMICALLY
--------------------------------------------*/
+/* ============================
+   2. INITIALIZATION (Runs when page loads)
+   ============================ */
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- SECURITY CHECKS ---
+    const isSystemPage = document.getElementById("systemPage");
+    const isLoginPage = document.getElementById("loginPage");
 
-function buildMenu() {
-    const container = document.getElementById("menuContainer");
-    container.innerHTML = "";
+    // 1. If on System Page
+    if (isSystemPage) {
+        if (!localStorage.getItem("isLoggedIn")) {
+            window.location.href = "login.html"; // Redirect to login
+        } else {
+            isSystemPage.style.display = "flex"; // Show page
+            
+            // *** CRITICAL FIX: BUILD THE MENU HERE ***
+            buildMenu(); 
 
-    modules.forEach(module => {
-        // MODULE TITLE
-        container.innerHTML += `
-            <div class="menu-group" onclick="toggleMenu('${module.id}')">${module.title}</div>
-            <ul id="${module.id}" class="submenu"></ul>
-        `;
+            // Auto-open sidebar on mobile
+            if (window.innerWidth <= 768) {
+                const sidebar = document.getElementById("sidebar");
+                if (sidebar) sidebar.classList.add("active");
+            }
+        }
+    }
 
-        // NESTED GROUPS
-        const moduleUL = document.getElementById(module.id);
+    // 2. If on Login Page
+    if (isLoginPage) {
+        if (localStorage.getItem("isLoggedIn")) {
+            window.location.href = "index.html"; // Redirect to system
+        } else {
+            isLoginPage.style.display = "flex"; // Show page
+        }
+    }
 
-        module.groups.forEach(group => {
-            moduleUL.innerHTML += `
-                <li class="nested-title" onclick="toggleMenu('${group.id}'); event.stopPropagation();">▶ ${group.title}</li>
-                <ul id="${group.id}" class="submenu nested"></ul>
-            `;
+    // --- EVENT LISTENERS ---
 
-            const groupUL = document.getElementById(group.id);
-
-            // LESSONS
-            group.lessons.forEach(lesson => {
-                const loadAction = lesson.type === "video" 
-                    ? `loadPDF('${lesson.link}')`  // Google Drive video preview
-                    : `loadPDF('${lesson.link}')`;
-
-                groupUL.innerHTML += `
-                    <li onclick="highlightMenu(this)">
-                        <a onclick="${loadAction}">${lesson.title}</a>
-                    </li>
-                `;
+    // Login "Enter" Key
+    const loginInputs = document.querySelectorAll("#loginBox input");
+    if (loginInputs.length > 0) {
+        loginInputs.forEach(input => {
+            input.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") login();
             });
         });
+    }
+
+    // Search Box "Enter" Key
+    const searchBox = document.getElementById("searchBox");
+    if (searchBox) {
+        searchBox.addEventListener("keydown", function(e) {
+            if (e.key === "Enter") {
+                this.value.trim() === "" ? restoreMenu() : searchPDF();
+            } else if (e.key === "Escape") {
+                this.value = "";
+                restoreMenu();
+            }
+        });
+        
+        searchBox.addEventListener("input", function () {
+            if (this.value.trim() === "") restoreMenu();
+        });
+    }
+});
+
+/* ============================
+   3. FUNCTIONS
+   ============================ */
+
+/* --- MENU BUILDER (THE MISSING PART) --- */
+function buildMenu() {
+    const container = document.getElementById("menuContainer");
+    if (!container) return;
+    container.innerHTML = ""; // Clear existing
+    buildMenuRecursive(areaContent, container);
+}
+
+function buildMenuRecursive(items, container) {
+    if (!items || items.length === 0) return;
+
+    const ul = document.createElement("ul");
+    // Only hide sub-menus (inside folders), but keep the main list visible
+    if (container.id !== "menuContainer") {
+        ul.style.display = "none"; 
+    }
+
+    items.forEach(item => {
+        const li = document.createElement("li");
+
+        if (item.type === "folder") {
+            // Folder Logic
+            const isArea = item.title.toUpperCase().startsWith("AREA");
+            const className = isArea ? "area-title" : "folder";
+            
+            li.innerHTML = `
+                <div class="${className}" onclick="toggleFolder(this)">
+                    <span class="arrow">▶</span> ${item.title}
+                </div>
+            `;
+            if (item.children) {
+                buildMenuRecursive(item.children, li);
+            }
+
+        } else if (item.type === "file") {
+            // File Logic
+            li.innerHTML = `
+                <div class="file" data-title="${item.title}" data-type="${item.type}">
+                    <a href="#" onclick="openFile(this, '${item.link}'); return false;" data-original="${item.title}">
+                        ${item.title}
+                    </a>
+                </div>
+            `;
+        }
+        ul.appendChild(li);
+    });
+
+    container.appendChild(ul);
+}
+
+function toggleFolder(element) {
+    const nextUl = element.nextElementSibling; // The <ul> containing children
+    const arrow = element.querySelector(".arrow");
+    
+    if (nextUl && nextUl.tagName === "UL") {
+        if (nextUl.style.display === "block") {
+            nextUl.style.display = "none";
+            if (arrow) arrow.classList.remove("rotate");
+        } else {
+            nextUl.style.display = "block";
+            if (arrow) arrow.classList.add("rotate");
+        }
+    }
+}
+
+/* --- FILE PREVIEW --- */
+function openFile(element, link) {
+    const iframe = document.getElementById("pdfFrame");
+    if (iframe) iframe.src = link;
+
+    const header = document.getElementById("fileTitleHeader");
+    if (header) header.textContent = element.innerText;
+}
+
+/* --- SYSTEM UTILS --- */
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar) sidebar.classList.toggle("active");
+}
+
+function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    const errorDiv = document.getElementById("loginError");
+
+    const validUser = accounts.find(acc => acc.username === user && acc.password === pass);
+
+    if (validUser) {
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "index.html";
+    } else {
+        errorDiv.textContent = "Invalid Username or Password";
+        errorDiv.style.color = "yellow";
+    }
+}
+
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+}
+
+/* --- SEARCH --- */
+/* --- SEARCH --- */
+function searchPDF() {
+    const query = document.getElementById("searchBox").value.toLowerCase();
+    const files = document.querySelectorAll("#menuContainer .file");
+
+    // If empty, reset the menu
+    if (!query.trim()) {
+        restoreMenu();
+        return;
+    }
+
+    // 1. Hide ALL files first (Reset visibility)
+    files.forEach(file => {
+        file.style.display = "none";
+        
+        // Restore original text (remove highlights) if it exists
+        const a = file.querySelector("a");
+        if (a && a.hasAttribute("data-original")) {
+            a.innerHTML = a.getAttribute("data-original");
+        }
+    });
+
+    // 2. Loop through and find matches
+    files.forEach(file => {
+        const title = file.getAttribute("data-title");
+        
+        // FIX: Convert title to lowercase before checking!
+        if (title && title.toLowerCase().includes(query)) {
+            
+            // Show the matching file
+            file.style.display = "block";
+            
+            // Open the folders leading to this file
+            expandParents(file);
+
+            // Highlight the keyword
+            const a = file.querySelector("a");
+            const original = a.getAttribute("data-original");
+            
+            // Safe regex for highlighting
+            const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp("(" + safeQuery + ")", "gi");
+            a.innerHTML = original.replace(regex, `<span class="highlight">$1</span>`);
+        }
     });
 }
 
-/* ------------------------------------------
-   PAGE LOGIC
--------------------------------------------*/
-
-function login() {
-    let user = document.getElementById("username").value.trim();
-    let pass = document.getElementById("password").value.trim();
-
-    let found = accounts.find(acc => acc.username === user && acc.password === pass);
-
-    if (found) {
-        document.getElementById("loginPage").style.display = "none";
-        document.getElementById("systemPage").style.display = "flex";
-    } else {
-        document.getElementById("loginError").textContent = "Invalid username or password";
+function expandParents(element) {
+    let parent = element.parentElement;
+    while (parent && parent.id !== "menuContainer") {
+        if (parent.tagName === "UL") {
+            parent.style.display = "block";
+            const folderTitle = parent.previousElementSibling; 
+            if (folderTitle) {
+                const arrow = folderTitle.querySelector(".arrow");
+                if (arrow) arrow.classList.add("rotate");
+            }
+        }
+        parent = parent.parentElement;
     }
 }
 
-/* Show PDF / Google Drive video */
-function loadPDF(url) {
-    document.getElementById("pdfFrame").src = url;
-    if (window.innerWidth < 768) toggleSidebar();
+function restoreMenu() {
+    buildMenu(); // Re-render the menu to clear search state
 }
-
-function toggleMenu(id) {
-    const menu = document.getElementById(id);
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-
-function highlightMenu(element) {
-    document.querySelectorAll(".submenu li")
-        .forEach(li => li.classList.remove("active-menu"));
-    element.classList.add("active-menu");
-}
-
-function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("active");
-}
-
-/* BUILD MENU WHEN PAGE LOADS */
-window.onload = buildMenu;
