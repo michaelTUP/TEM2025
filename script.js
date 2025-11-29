@@ -10,7 +10,7 @@ const accounts = [
 
 const areaContent = [
     {
-        title: "601 - Dr. Portez",
+        title: "601",
         type: "folder",
         children: [
             {title: "Historical Roots of Technology Education", type: "file", link: "https://drive.google.com/file/d/1678NMH6hEUOy2TsxYXJ92YiV5C78HVOM/preview"},                            
@@ -29,7 +29,7 @@ const areaContent = [
         ]
     },
     {
-        title: "604 - Dr. Cruz",
+        title: "604",
         type: "folder",
         children: [
             {title: "Introduction to Leadership Theories in Technology Education (part 1)", type: "file", link: ""},                            
@@ -49,7 +49,7 @@ const areaContent = [
         ]
     },
     {
-        title: "609 - Dr. De Asis",
+        title: "609", 
         type: "folder",
         children: [
             {title: "Investigate Challenges PH Education Facilities", type: "file", link: "https://drive.google.com/file/d/1H-qY7BLzrAOxtJhp1h6b9tYTrmccpHg9/preview"},                            
