@@ -38,7 +38,7 @@ const areaContent = [
             {title: "Policy Development in Technology Education	(part 1)", type: "file", link: ""},
             {title: "Policy Development in Technology Education	(part 2)", type: "file", link: ""},
             {title: "Legal Issues", type: "file", link: ""},
-            {title: "Ethical Issues", type: "file", link: ""},
+            {title: "Ethical Issues", type: "file", link: "https://drive.google.com/file/d/1QkMxd9DnYYA7tDLGXV0cRKCyyczGn5F4/view?usp=drive_link"},
             {title: "Governance Models in Technology Education (part 1)", type: "file", link: ""},
             {title: "Governance Models in Technology Education (part 2)", type: "file", link: ""},
             {title: "Accountability and Performance Management (part 1)", type: "file", link: ""},
@@ -52,7 +52,7 @@ const areaContent = [
         title: "609 - Dr. De Asis",
         type: "folder",
         children: [
-            {title: "", type: "file", link: ""},                            
+            {title: "Investigate Challenges PH Education Facilities", type: "file", link: "https://drive.google.com/file/d/1H-qY7BLzrAOxtJhp1h6b9tYTrmccpHg9/view?usp=drive_link"},                            
                           
         ]
     },
