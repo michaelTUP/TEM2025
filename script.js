@@ -3,7 +3,9 @@
    ============================ */
 const accounts = [
     { username: "kokai", password: "123" },
-    { username: "tem", password: "2025" }
+    { username: "tem", password: "2025" },
+    { username: "TEM", password: "2025" },
+    { username: "Tem", password: "2025" }
 ];
 
 const areaContent = [
