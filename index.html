@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TUP-CIE | MTE PORTAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginPage">
+    <div id="loginBox">
+        <img src="https://mark-avila.github.io/tup-concept/assets/tup-logo.png">
+        <div id="schoolName">TECHNOLOGOGICAL UNIVERSITY OF THE PHILIPPINES</div>
+        <div id="welcomeMsg">Welcome AACCUP Accreditors! Please log in.</div>
+
+        <input id="username" type="text" placeholder="Username">
+        <input id="password" type="password" placeholder="Password">
+        <button onclick="login()">LOGIN</button>
+        <div id="loginError"></div>
+    </div>
+</div>
+
+<div id="systemPage">
+
+    <button id="toggleSidebarBtn" onclick="toggleSidebar()">☰</button>
+
+    <aside id="sidebar">
+        <img src="https://mark-avila.github.io/tup-concept/assets/tup-logo.png" alt="Logo 1">        
+        <center><h4>Master of Technology Education</h4></center>
+        <div id="menuContainer"></div>
+    </aside>
+
+    <main id="content">
+        <iframe id="pdfFrame"></iframe>
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
